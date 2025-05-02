@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chanja Autos - Daily Sales</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="9.png" alt="Chanja Autos Logo" class="logo-dashboard"  height="250" width="250">
+    <h1>Daily Sales Report per Client</h1>
+  </header>
+  <main>
+    <section class="sales-form">
+      <h2>Add Daily Sale</h2>
+      <form id="salesForm">
+         <label for="sale-date">Date:</label>
+         <input type="date" id="sale-date" name="sale-date" required>
+         
+         <label for="client-name">Client Name:</label>
+         <input type="text" id="client-name" name="client-name" required>
+         
+         <label for="sale-amount">Sale Amount (KSH):</label>
+         <input type="number" id="sale-amount" name="sale-amount" step="0.01" required>
+         
+         <label for="items-sold">Items Sold:</label>
+         <input type="number" id="items-sold" name="items-sold" required>
+         
+         <button type="submit">Add Sale</button>
+      </form>
+    </section>
+    <section class="sales-list">
+      <h2>Sales Records</h2>
+      <table>
+         <thead>
+            <tr>
+              <th>Date</th>
+              <th>Client Name</th>
+              <th>Sale Amount</th>
+              <th>Items Sold</th>
+            </tr>
+         </thead>
+         <tbody id="salesTableBody">
+           <!-- Sales records will be added here dynamically -->
+         </tbody>
+      </table>
+      <section class="credit-sales">
+        <h2>Credit Sales</h2>
+        <form id="creditForm">
+          <label for="credit-client">Client Name:</label>
+          <input type="text" id="credit-client" required>
+      
+          <label for="credit-amount">Credit Amount (ksh):</label>
+          <input type="number" id="credit-amount" step="0.01" required>
+      
+          <label for="due-date">Due Date:</label>
+          <input type="date" id="due-date" required>
+      
+          <label for="initial-payment">Initial Payment (ksh):</label>
+          <input type="number" id="initial-payment" step="0.01" required>
+      
+          <button type="submit">Add Credit</button>
+        </form>
+      
+        <table>
+          <thead>
+            <tr>
+              <th>Client</th>
+              <th>Credit Amount</th>
+              <th>Paid</th>
+              <th>Balance</th>
+              <th>Due Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          
+          <tbody id="creditTableBody">
+            <!-- Credit entries go here -->
+          </tbody>
+        </table>
+      </section>
+      
+      <!-- Stock Balance Section -->
+      <div class="stock-balance">
+        <h2>Stock Balance</h2>
+        <label for="stock-balance-input">Enter Stock Balance (Items):</label>
+        <input type="number" id="stock-balance-input" name="stock-balance-input" required>
+        <button id="updateStockBalance">Update Stock Balance</button>
+        <p>Current Stock Balance: <span id="stockBalanceDisplay">0</span> items</p>
+      </div>
+      <!-- Total Sales Section -->
+      <div class="total-sales">
+        <h2>Total Sales: KSH<span id="totalSales">0.00</span></h2>
+      </div>
+    </section>
+  </main>
+  <script src="sales.js"></script>
+</body>
+</html>

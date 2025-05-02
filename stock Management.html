@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chanja Autos - Stock Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="9.png" alt="Chanja Autos Logo" class="logo-dashboard" height="250" width="250"/>
+    <h1>Stock Management</h1>
+    
+  </header>
+  <main>
+    <section class="stock-form">
+      <h2>Add New Stock Item</h2>
+      <form id="stockForm">
+         <label for="item-name">Item Name:</label>
+         <input type="text" id="item-name" name="item-name" required>
+         
+         <label for="item-price">Price per Item (KSH):</label>
+         <input type="number" id="item-price" name="item-price" step="0.01" required>
+         
+         <label for="item-quantity">Quantity:</label>
+         <input type="number" id="item-quantity" name="item-quantity" required>
+         
+         <button type="submit">Add Item</button>
+      </form>
+    </section>
+    <section class="stock-list">
+      <h2>Current Stock</h2>
+      <table>
+         <thead>
+            <tr>
+              <th>Item Name</th>
+              <th>Price per Item</th>
+              <th>Quantity</th>
+              <th>Total Value</th>
+            </tr>
+         </thead>
+         <tbody id="stockTableBody">
+           <!-- New stock items will be added here dynamically -->
+         </tbody>
+      </table>
+    </section>
+  </main>
+  <script src="stock.js"></script>
+</body>
+</html>
